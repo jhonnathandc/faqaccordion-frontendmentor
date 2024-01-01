@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans";
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f8eeff;
+  background-image: url("./images/background-pattern-desktop.svg");
+  height: 32rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+}
+
+.main {
+  background-color: #ffffff;
+  padding: 4rem;
+  border-radius: 1.6rem;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+}
+
+.main h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: #301534;
+  margin-bottom: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.main h1::before {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 4.1rem;
+  background-image: url("./images/icon-star.svg");
+}
+
+.main dl div {
+  padding-bottom: 2.4rem;
+}
+
+.main dl div:not(:nth-child(1)) {
+  border-top: 0.1rem solid #f8eeff;
+  padding-top: 2.4rem;
+}
+
+.main dl div button {
+  width: 100%;
+  text-align: start;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.main dl div button:hover dt {
+  color: #ad28eb;
+}
+
+.main dl div button dt {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #301534;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  gap: 3.1rem;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.main dl div button dt::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3.1rem;
+  background-image: url("./images/icon-plus.svg");
+}
+
+.main dl div button dt::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3.1rem;
+  background-image: url("./images/icon-minus.svg");
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+
+.main dl div dd {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #8b6990;
+  max-width: 52rem;
+  visibility: hidden;
+  position: absolute;
+}
+
+/* ACTIVE */
+.main dl div button.active {
+  margin-bottom: 2.4rem;
+}
+
+.main dl div button.active dt::after {
+  visibility: hidden;
+}
+
+.main dl div button.active dt::before {
+  visibility: visible;
+}
+
+.main dl div dd.active {
+  visibility: visible;
+  position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  .main {
+    padding: 2.4rem;
+  }
+
+  .main h1 {
+    font-size: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .main h1::before {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: contain;
+  }
+
+  .main dl div {
+    padding-bottom: 2rem;
+  }
+
+  .main dl div:not(:nth-child(1)) {
+    padding-top: 2rem;
+  }
+
+  .main dl div button dt {
+    font-size: 1.6rem;
+  }
+
+  .main dl div dd {
+    font-size: 1.4rem;
+  }
+}
